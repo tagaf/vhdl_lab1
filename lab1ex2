@@ -1,0 +1,21 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity lab1ex2 is 
+port (	sw:in std_logic_vector (17 downto 0);
+			ledr:out std_logic_vector(17 downto 0); 
+			ledg:out std_logic_vector(7 downto 0));
+end lab1ex2;
+
+architecture funct of lab1ex2 is 
+begin 
+ledr <= sw;
+ledg(7) <= (NOT (sw(17)) AND sw(15)) OR (sw(17) AND sw(7));
+ledg(6) <= (NOT (sw(17)) AND sw(14)) OR (sw(17) AND sw(6));
+ledg(5) <= (NOT (sw(17)) AND sw(13)) OR (sw(17) AND sw(5));
+ledg(4) <= (NOT (sw(17)) AND sw(12)) OR (sw(17) AND sw(4));
+ledg(3) <= (NOT (sw(17)) AND sw(11)) OR (sw(17) AND sw(3));
+ledg(2) <= (NOT (sw(17)) AND sw(10)) OR (sw(17) AND sw(2));
+ledg(1) <= (NOT (sw(17)) AND sw(9)) OR (sw(17) AND sw(1));
+ledg(0) <= (NOT (sw(17)) AND sw(8)) OR (sw(17) AND sw(0));
+end funct;
